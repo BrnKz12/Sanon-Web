@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrar — Sanon Gestão e Energia</title>
+<meta name="description" content="Entre ou crie sua conta na Sanon Gestão e Energia para simular orçamentos de energia solar e acompanhar sua usina.">
+<meta name="theme-color" content="#0c1a2b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sanon Gestão e Energia">
+<meta property="og:title" content="Entrar — Sanon Gestão e Energia">
+<meta property="og:locale" content="pt_BR">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23ff8a34'/%3E%3Cpath d='M16 1a15 15 0 000 30z' fill='%2316314e'/%3E%3C/svg%3E">
+<!-- Aplica o tema salvo (claro/escuro) antes de pintar a página, evitando "flash" -->
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem('sanon_theme');
+    if(!t){ t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+    document.documentElement.setAttribute('data-theme', t);
+  }catch(e){}
+})();
+</script>
+<!-- CSS: login.css (contém a base + os estilos da tela de login) -->
+<link rel="stylesheet" href="Login.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Sanon<small>GESTÃO &amp; ENERGIA</small></span>
+    </a>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar tema claro/escuro">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.5a8.5 8.5 0 1 1-9-11 7 7 0 0 0 9 11z"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="auth-shell" id="auth-shell">
+
+  <div class="auth-visual">
+    <div class="auth-visual-top"></div>
+    <div class="auth-quote">
+      <h2>Acompanhe sua energia de perto.</h2>
+      <p>Crie sua conta para simular orçamentos e falar direto com nossos especialistas em fotovoltaico.</p>
+    </div>
+    <div class="auth-mini-stats">
+      <div><b>+400</b><span>sistemas instalados</span></div>
+      <div><b>92%</b><span>redução média na conta</span></div>
+      <div><b>18 MWp</b><span>potência gerida</span></div>
+    </div>
+  </div>
+
+  <div class="auth-panel">
+    <div class="auth-card">
+      <a href="index.html" class="back-home">← Voltar ao site</a>
+
+      <div class="tab-toggle" id="tab-toggle">
+        <div class="tab-thumb"></div>
+        <button type="button" id="tab-login" class="active">Fazer Login</button>
+        <button type="button" id="tab-cadastro">Criar cadastro</button>
+      </div>
+
+      <div class="auth-forms">
+        <!-- LOGIN -->
+        <form id="form-login" class="auth-form active" novalidate>
+          <div class="field">
+            <label for="login-email">E-mail</label>
+            <input type="email" id="login-email" required placeholder="voce@email.com">
+          </div>
+          <div class="field">
+            <label for="login-senha">Senha</label>
+            <input type="password" id="login-senha" required placeholder="••••••••">
+          </div>
+          <div class="form-msg" id="login-msg"></div>
+          <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+          <p class="reset-link"><button type="button" class="link-btn" id="show-reset">Esqueci minha senha</button></p>
+        </form>
+
+        <!-- REDEFINIR SENHA -->
+        <form id="form-reset" class="auth-form" novalidate>
+          <div class="field">
+            <label for="reset-email">E-mail da conta</label>
+            <input type="email" id="reset-email" required placeholder="voce@email.com">
+          </div>
+          <div class="field">
+            <label for="reset-senha">Nova senha</label>
+            <input type="password" id="reset-senha" required placeholder="Mínimo de 6 caracteres">
+          </div>
+          <div class="field">
+            <label for="reset-senha2">Confirmar nova senha</label>
+            <input type="password" id="reset-senha2" required placeholder="Repita a nova senha">
+          </div>
+          <div class="form-msg" id="reset-msg"></div>
+          <button type="submit" class="btn btn-primary btn-block">Redefinir senha</button>
+          <p class="reset-link"><button type="button" class="link-btn" id="back-to-login">Voltar para o login</button></p>
+        </form>
+
+        <!-- CADASTRO -->
+        <form id="form-cadastro" class="auth-form" novalidate>
+          <div class="field">
+            <label for="cad-nome">Nome completo</label>
+            <input type="text" id="cad-nome" required placeholder="Seu nome">
+          </div>
+          <div class="field">
+            <label for="cad-email">E-mail</label>
+            <input type="email" id="cad-email" required placeholder="voce@email.com">
+          </div>
+          <div class="field">
+            <label for="cad-senha">Senha</label>
+            <input type="password" id="cad-senha" required placeholder="Mínimo de 6 caracteres">
+          </div>
+          <div class="field">
+            <label for="cad-senha2">Confirmar senha</label>
+            <input type="password" id="cad-senha2" required placeholder="Repita a senha">
+          </div>
+          <label class="checkbox-field">
+            <input type="checkbox" id="cad-lgpd">
+            <span>Li e concordo com a <button type="button" class="link-btn" data-open-privacy>Política de Privacidade</button>.</span>
+          </label>
+          <div class="form-msg" id="cadastro-msg"></div>
+          <button type="submit" class="btn btn-primary btn-block">Criar cadastro</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- MODAL: Política de Privacidade (compartilhado com index.html) -->
+<div class="modal-overlay" id="privacy-modal">
+  <div class="modal-card">
+    <button class="modal-close" id="privacy-close" type="button" aria-label="Fechar">×</button>
+    <h3>Política de Privacidade</h3>
+    <div class="privacy-text">
+      <h4>Quais dados coletamos</h4>
+      <p>Ao criar uma conta, podemos coletar seu nome, e-mail, telefone, endereço e, se você enviar depois em "Meu perfil", uma foto.</p>
+      <h4>Onde os dados ficam armazenados</h4>
+      <p>Neste site de demonstração, os dados são salvos apenas no armazenamento local do seu próprio navegador (localStorage/sessionStorage) — não são enviados a nenhum servidor da Sanon. Limpar os dados do navegador apaga essas informações.</p>
+      <h4>Como usamos seus dados</h4>
+      <p>Usamos as informações para autenticar seu login, manter sua sessão e simular seu orçamento fotovoltaico.</p>
+      <h4>Seus direitos (LGPD)</h4>
+      <p>Você pode acessar, corrigir ou apagar seus dados a qualquer momento em "Meu perfil" ou limpando os dados do site no seu navegador. Em caso de dúvidas, entre em contato pelo e-mail contato@sanon.com.br.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Botão flutuante do WhatsApp -->
+<a class="whatsapp-float" href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20Sanon!%20Preciso%20de%20ajuda%20para%20entrar%20na%20minha%20conta." target="_blank" rel="noopener" aria-label="Falar com a Sanon no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#ffffff"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C10.1 9 9.6 7.8 9.4 7.3c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5-1.3c1.4.8 3.1 1.2 4.9 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.7 0-3.2-.5-4.6-1.3l-.3-.2-3 .8.8-2.9-.2-.3C3.9 15 3.4 13.5 3.4 12c0-4.7 3.9-8.6 8.6-8.6 4.7 0 8.6 3.9 8.6 8.6 0 4.8-3.9 8.6-8.6 8.6z"/></svg>
+</a>
+
+<!-- JS: login.js (contém a autenticação simulada + a lógica da tela de login) -->
+<script src="Login.js"></script>
+</body>
+</html>

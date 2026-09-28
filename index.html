@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanon Gestão e Energia — Energia solar fotovoltaica</title>
+<meta name="description" content="Sanon Gestão e Energia: projeto, instalação e gestão de sistemas fotovoltaicos. Simule seu orçamento e fale com nossos especialistas.">
+<meta name="theme-color" content="#0c1a2b">
+<!-- Open Graph / redes sociais -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sanon Gestão e Energia">
+<meta property="og:title" content="Sanon Gestão e Energia — Energia solar fotovoltaica">
+<meta property="og:description" content="Projeto, instalação e gestão de sistemas de energia fotovoltaica para residências e empresas. Simule seu orçamento em minutos.">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary">
+<!-- Favicon (marca da Sanon em SVG embutido, sem depender de arquivo externo) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23ff8a34'/%3E%3Cpath d='M16 1a15 15 0 000 30z' fill='%2316314e'/%3E%3C/svg%3E">
+<!-- Aplica o tema salvo (claro/escuro) antes de pintar a página, evitando "flash" -->
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem('sanon_theme');
+    if(!t){ t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+    document.documentElement.setAttribute('data-theme', t);
+  }catch(e){}
+})();
+</script>
+<!-- CSS: index.css (contém a base + os estilos da home) -->
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Sanon<small>GESTÃO &amp; ENERGIA</small></span>
+    </a>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#galeria">Projetos</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#orcamento">Orçamento</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <div id="auth-slot">
+        <a href="Login.html" class="btn btn-ghost">Fazer Login</a>
+      </div>
+
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar tema claro/escuro">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.5a8.5 8.5 0 1 1-9-11 7 7 0 0 0 9 11z"/></svg>
+      </button>
+    </nav>
+
+    <button class="nav-toggle" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">PROJETO · INSTALAÇÃO · GESTÃO DE ENERGIA</p>
+        <h1>A energia do sol, gerida com <em>precisão</em> de engenharia.</h1>
+        <p class="lede">A Sanon projeta, instala e monitora sistemas de energia fotovoltaica para residências e empresas, transformando radiação solar em economia previsível na sua conta de luz.</p>
+        <div class="hero-actions">
+          <a href="#orcamento" class="btn btn-primary">Simular meu orçamento</a>
+          <a href="#servicos" class="btn btn-ghost-inv">Conhecer os serviços</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b>+400</b><span>sistemas instalados</span></div>
+          <div class="stat"><b>18 MWp</b><span>de potência gerida</span></div>
+          <div class="stat"><b>92%</b><span>de redução média na conta</span></div>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <svg class="sun-arc-svg" viewBox="0 0 420 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 300 A 190 190 0 0 1 400 300" stroke="rgba(246,243,238,0.18)" stroke-width="1" stroke-dasharray="2 8"/>
+          <path d="M55 300 A 155 155 0 0 1 365 300" stroke="rgba(246,243,238,0.14)" stroke-width="1" stroke-dasharray="2 8"/>
+          <line x1="10" y1="300" x2="410" y2="300" stroke="rgba(246,243,238,0.18)" stroke-width="1"/>
+          <circle cx="210" cy="140" r="46" fill="#ff8a34"/>
+          <circle cx="210" cy="140" r="70" stroke="rgba(255,138,52,0.35)" stroke-width="1"/>
+          <circle cx="55" cy="300" r="3" fill="#ff8a34"/>
+          <circle cx="365" cy="300" r="3" fill="#ff8a34"/>
+          <g stroke="rgba(246,243,238,0.5)" stroke-width="1.4">
+            <line x1="210" y1="55" x2="210" y2="72"/>
+            <line x1="120" y1="85" x2="132" y2="96"/>
+            <line x1="300" y1="85" x2="288" y2="96"/>
+          </g>
+          <rect x="70" y="330" width="280" height="10" rx="2" fill="rgba(246,243,238,0.08)"/>
+          <g fill="#16314e" stroke="rgba(246,243,238,0.25)" stroke-width="1">
+            <polygon points="100,330 140,330 150,300 110,300"/>
+            <polygon points="150,300 190,300 200,270 160,270"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="section" id="sobre">
+    <div class="container">
+      <div class="section-head">
+        <h2>Quem é a Sanon</h2>
+        <p>Somos uma empresa de gestão e energia focada em sistemas fotovoltaicos: do dimensionamento técnico à homologação junto à concessionária, cuidamos de cada etapa para que sua geração de energia funcione sem surpresas.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-figure">
+          <p class="figure-number">DESDE A ORIGEM</p>
+          <h3>Gestão de energia, não só instalação.</h3>
+          <p style="color:rgba(246,243,238,0.72)">Acompanhamos o sistema depois de instalado: monitoramento de geração, manutenção preventiva e relatórios de performance fazem parte do serviço.</p>
+          <ul class="about-list">
+            <li><span>Residencial</span><b>2 – 15 kWp</b></li>
+            <li><span>Comercial</span><b>15 – 150 kWp</b></li>
+            <li><span>Industrial</span><b>150 kWp+</b></li>
+          </ul>
+        </div>
+
+        <div>
+          <p>A Sanon nasceu para simplificar a transição energética de famílias e empresas. Nossa equipe reúne engenheiros eletricistas, técnicos de instalação e especialistas em gestão de contas de energia, acompanhando o cliente da primeira simulação até o pós-venda.</p>
+          <p>Trabalhamos com fornecedores homologados de painéis e inversores, seguimos as normas técnicas da ABNT e da concessionária local, e entregamos projetos com garantia de performance — sempre com transparência sobre prazos e custos.</p>
+          <p>Mais do que instalar painéis, gerimos energia: monitoramos a geração em tempo real, identificamos quedas de performance e cuidamos da manutenção para que o investimento continue rendendo por décadas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="section section-tight" id="servicos" style="background:var(--bg-surface-alt)">
+    <div class="container">
+      <div class="section-head">
+        <h2>O que fazemos</h2>
+        <p>Um serviço completo, pensado para reduzir a burocracia de quem quer gerar a própria energia.</p>
+      </div>
+
+      <div class="services-list">
+        <div class="service-row">
+          <div class="icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/></svg>
+          </div>
+          <div>
+            <h4>Projeto &amp; instalação fotovoltaica</h4>
+            <p>Dimensionamento técnico, escolha de equipamentos e instalação completa, com homologação junto à concessionária.</p>
+          </div>
+          <span class="tag">01 · ENGENHARIA</span>
+        </div>
+
+        <div class="service-row">
+          <div class="icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 19V9l5-4 5 4v10M14 19v-6l4-3 2 1.6V19" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <h4>Gestão de energia</h4>
+            <p>Monitoramento de geração e consumo em tempo real, com relatórios periódicos de performance do sistema.</p>
+          </div>
+          <span class="tag">02 · MONITORAMENTO</span>
+        </div>
+
+        <div class="service-row">
+          <div class="icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M11 3h2l.6 3.2a6.9 6.9 0 0 1 1.9 1.1l3-1.1 1.5 2.6-2.4 2.1a7 7 0 0 1 0 2.2l2.4 2.1-1.5 2.6-3-1.1a6.9 6.9 0 0 1-1.9 1.1L13 21h-2l-.6-3.2a6.9 6.9 0 0 1-1.9-1.1l-3 1.1-1.5-2.6 2.4-2.1a7 7 0 0 1 0-2.2L4 8.8l1.5-2.6 3 1.1a6.9 6.9 0 0 1 1.9-1.1L11 3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.6" stroke="currentColor" stroke-width="1.4"/></svg>
+          </div>
+          <div>
+            <h4>Manutenção preventiva</h4>
+            <p>Limpeza, inspeção de painéis e inversores, e correção de perdas de performance ao longo do tempo.</p>
+          </div>
+          <span class="tag">03 · SUPORTE</span>
+        </div>
+
+        <div class="service-row">
+          <div class="icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 4v16h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7 15l3.5-4 3 3L19 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <h4>Consultoria energética</h4>
+            <p>Análise da sua conta de luz e do perfil de consumo para indicar o sistema com melhor retorno financeiro.</p>
+          </div>
+          <span class="tag">04 · CONSULTORIA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section class="section" id="galeria">
+    <div class="container">
+      <div class="section-head">
+        <h2>Projetos executados</h2>
+        <p>Uma amostra de instalações residenciais, comerciais e industriais realizadas pela nossa equipe.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item g1"><span>Usina comercial · 84 kWp — Franca/SP</span></div>
+        <div class="gallery-item g2"><span>Residencial · 6,4 kWp</span></div>
+        <div class="gallery-item g3"><span>Manutenção preventiva</span></div>
+        <div class="gallery-item g4"><span>Monitoramento em campo</span></div>
+        <div class="gallery-item g5"><span>Indústria têxtil · 210 kWp</span></div>
+      </div>
+      <p class="gallery-note">* Substituir os blocos acima por fotos reais dos projetos da Sanon (pasta /img sugerida).</p>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="section section-tight" id="depoimentos" style="background:var(--bg-surface-alt)">
+    <div class="container">
+      <div class="section-head">
+        <h2>O que dizem nossos clientes</h2>
+        <p>Depoimentos de clientes residenciais e comerciais que já reduziram a conta de luz com a Sanon. * Textos ilustrativos — substituir por depoimentos reais coletados dos clientes.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <blockquote class="testimonial-card">
+          <p>A instalação foi rápida e a equipe explicou cada etapa. Minha conta de luz caiu de forma consistente desde o primeiro mês.</p>
+          <footer><b>Marina T.</b><span>Franca/SP · 6,4 kWp</span></footer>
+        </blockquote>
+        <blockquote class="testimonial-card">
+          <p>Como empresa, o que mais pesou na decisão foi o acompanhamento pós-instalação. A Sanon monitora e avisa quando algo sai do esperado.</p>
+          <footer><b>Ricardo A.</b><span>Indústria têxtil · 210 kWp</span></footer>
+        </blockquote>
+        <blockquote class="testimonial-card">
+          <p>Simulei o orçamento pelo site, fui atendido no WhatsApp no mesmo dia e o projeto ficou pronto em poucas semanas.</p>
+          <footer><b>Juliana P.</b><span>Ribeirão Preto/SP · 8,2 kWp</span></footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORÇAMENTO -->
+  <section class="section quote-section" id="orcamento">
+    <div class="container">
+      <div class="section-head section-on-dark">
+        <h2>Simule o orçamento do seu sistema fotovoltaico</h2>
+        <p>Informe seu consumo ou o valor da sua conta de luz para ver uma estimativa de potência e investimento, com base em preços atuais de mercado.</p>
+      </div>
+
+      <div class="quote-panel">
+        <div class="quote-form">
+          <div class="mode-toggle">
+            <button type="button" data-mode="consumo" class="active">Por consumo (kWh)</button>
+            <button type="button" data-mode="conta">Por valor da conta (R$)</button>
+          </div>
+
+          <form id="quote-form">
+            <div class="field-group">
+              <label for="input-uf">Estado (UF)</label>
+              <div class="input-wrap">
+                <select id="input-uf">
+                  <option value="AC">AC — Acre</option>
+                  <option value="AL">AL — Alagoas</option>
+                  <option value="AP">AP — Amapá</option>
+                  <option value="AM">AM — Amazonas</option>
+                  <option value="BA">BA — Bahia</option>
+                  <option value="CE">CE — Ceará</option>
+                  <option value="DF">DF — Distrito Federal</option>
+                  <option value="ES">ES — Espírito Santo</option>
+                  <option value="GO">GO — Goiás</option>
+                  <option value="MA">MA — Maranhão</option>
+                  <option value="MT">MT — Mato Grosso</option>
+                  <option value="MS">MS — Mato Grosso do Sul</option>
+                  <option value="MG">MG — Minas Gerais</option>
+                  <option value="PA">PA — Pará</option>
+                  <option value="PB">PB — Paraíba</option>
+                  <option value="PR">PR — Paraná</option>
+                  <option value="PE">PE — Pernambuco</option>
+                  <option value="PI">PI — Piauí</option>
+                  <option value="RJ">RJ — Rio de Janeiro</option>
+                  <option value="RN">RN — Rio Grande do Norte</option>
+                  <option value="RS">RS — Rio Grande do Sul</option>
+                  <option value="RO">RO — Rondônia</option>
+                  <option value="RR">RR — Roraima</option>
+                  <option value="SC">SC — Santa Catarina</option>
+                  <option value="SP" selected>SP — São Paulo</option>
+                  <option value="SE">SE — Sergipe</option>
+                  <option value="TO">TO — Tocantins</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field-group" id="field-consumo">
+              <label for="input-consumo">Consumo médio mensal</label>
+              <div class="input-wrap">
+                <input type="number" id="input-consumo" min="1" step="1" placeholder="Ex.: 420" inputmode="numeric">
+                <span class="input-suffix">kWh/mês</span>
+              </div>
+            </div>
+
+            <div class="field-group" id="field-conta" style="display:none">
+              <label for="input-conta">Valor médio da conta de luz</label>
+              <div class="input-wrap">
+                <input type="number" id="input-conta" min="1" step="1" placeholder="Ex.: 480" inputmode="numeric">
+                <span class="input-suffix">R$/mês</span>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="input-parcelas">Simular financiamento em quantas vezes?</label>
+              <div class="input-wrap">
+                <select id="input-parcelas">
+                  <option value="1">À vista</option>
+                  <option value="36">36x</option>
+                  <option value="48">48x</option>
+                  <option value="60" selected>60x</option>
+                  <option value="72">72x</option>
+                  <option value="84">84x</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Calcular estimativa</button>
+          </form>
+
+          <p class="price-note">Estimativa baseada em preço médio de mercado de R$ 3,80/Wp instalado (referência atualizada — Radar Solfácil, 2026), geração média nacional de 130 kWh/mês por kWp (ajustada conforme a irradiação solar do seu estado) e simulação de financiamento com taxa de referência de 1,79% a.m. Valores finais dependem de visita técnica e das condições de crédito aprovadas.</p>
+        </div>
+
+        <div class="quote-result">
+          <p class="result-placeholder" id="result-placeholder">Preencha o formulário ao lado para ver a potência recomendada e o investimento estimado do seu sistema.</p>
+
+          <div id="quote-result-box" style="display:none">
+            <p class="result-label">Investimento estimado</p>
+            <p class="result-price" id="result-price">R$ 0</p>
+            <p class="result-sub">Valor de referência, sujeito a confirmação técnica</p>
+
+            <div class="result-breakdown">
+              <div><span>Potência recomendada</span><span id="result-kwp">—</span></div>
+              <div><span>Consumo considerado</span><span id="result-kwh">—</span></div>
+              <div><span>Payback estimado</span><span id="result-payback">—</span></div>
+              <div id="result-parcela-row" style="display:none"><span>Parcela estimada</span><span id="result-parcela">—</span></div>
+            </div>
+
+            <div class="savings-chart-wrap" id="savings-chart-wrap" style="display:none">
+              <p class="result-label">Economia estimada em 25 anos</p>
+              <canvas id="savings-chart" width="600" height="220" role="img" aria-label="Gráfico comparando o gasto acumulado com e sem energia solar ao longo de 25 anos"></canvas>
+              <p class="chart-legend"><span class="dot dot-without"></span>Sem energia solar<span class="dot dot-with"></span>Com energia solar</p>
+              <p class="result-sub" id="savings-summary"></p>
+            </div>
+
+            <button class="btn btn-primary btn-block" id="quote-cta">Confirmar e solicitar orçamento</button>
+            <div class="login-gate" id="login-gate">
+              Para enviar sua simulação para o nosso WhatsApp, faça login ou crie seu cadastro. <a href="Login.html">Entrar agora →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <h2>Perguntas frequentes</h2>
+        <p>Ainda com dúvidas? Fale com a gente pelo WhatsApp — mas talvez a resposta já esteja aqui.</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Quanto tempo leva do orçamento até o sistema funcionando?</summary>
+          <p>Em geral, de 30 a 60 dias entre o fechamento do projeto, a instalação e a homologação junto à concessionária local — o prazo pode variar conforme a fila da distribuidora na sua região.</p>
+        </details>
+        <details class="faq-item">
+          <summary>É possível parcelar o investimento?</summary>
+          <p>Sim. Trabalhamos com financiamento em até 84x através de instituições parceiras. Você pode simular o valor aproximado da parcela na calculadora de orçamento acima.</p>
+        </details>
+        <details class="faq-item">
+          <summary>O que acontece em dias nublados ou à noite?</summary>
+          <p>O sistema gera menos energia em dias nublados e nada durante a noite, mas o excedente gerado em outros momentos é injetado na rede e vira crédito de energia, compensado na sua conta pela concessionária.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Quem cuida da manutenção depois da instalação?</summary>
+          <p>A Sanon gerencia o sistema depois de instalado: monitoramento de geração, limpeza periódica dos painéis e correção de eventuais quedas de performance fazem parte do serviço.</p>
+        </details>
+        <details class="faq-item">
+          <summary>A estimativa do simulador é o valor final?</summary>
+          <p>Não. É uma referência baseada em preço médio de mercado e no seu consumo informado. O valor final depende de uma visita técnica, do tipo de telhado/estrutura e das condições de acesso à rede na sua região.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final-cta" id="contato">
+    <div class="container">
+      <h2>Pronto para gerar sua própria energia?</h2>
+      <p>Fale com um especialista da Sanon e receba uma proposta personalizada para o seu perfil de consumo.</p>
+      <a href="#orcamento" class="btn btn-primary">Simular orçamento agora</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- MODAL: Meu Perfil (só é aberto quando o usuário está logado) -->
+<div class="modal-overlay" id="profile-modal">
+  <div class="modal-card">
+    <button class="modal-close" id="profile-close" type="button" aria-label="Fechar">×</button>
+    <h3>Meu perfil</h3>
+    <p>Atualize sua foto, endereço e demais dados. Essas informações são salvas neste navegador.</p>
+
+    <form id="profile-form" novalidate>
+      <div class="avatar-edit">
+        <div class="avatar-preview" id="avatar-preview"></div>
+        <label class="btn btn-ghost btn-sm" for="profile-foto" style="cursor:pointer">Alterar foto</label>
+        <input type="file" id="profile-foto" accept="image/*" hidden>
+      </div>
+
+      <div class="field">
+        <label for="profile-nome">Nome completo</label>
+        <input type="text" id="profile-nome" required>
+      </div>
+      <div class="field">
+        <label for="profile-email">E-mail</label>
+        <input type="email" id="profile-email" disabled>
+      </div>
+      <div class="field">
+        <label for="profile-telefone">Telefone / WhatsApp</label>
+        <input type="tel" id="profile-telefone" placeholder="(11) 99999-9999">
+      </div>
+      <div class="field">
+        <label for="profile-endereco">Endereço</label>
+        <input type="text" id="profile-endereco" placeholder="Rua, número, bairro, cidade - UF">
+      </div>
+
+      <div class="form-msg" id="profile-msg"></div>
+      <button type="submit" class="btn btn-primary btn-block">Salvar alterações</button>
+    </form>
+  </div>
+</div>
+
+<!-- MODAL: Minha usina (monitoramento — dados de demonstração, só é aberto quando logado) -->
+<div class="modal-overlay" id="usina-modal">
+  <div class="modal-card">
+    <button class="modal-close" id="usina-close" type="button" aria-label="Fechar">×</button>
+    <h3>Minha usina</h3>
+    <span class="usina-demo-badge">Dados de demonstração</span>
+    <p>Estes números são simulados para fins de demonstração. Em breve esta área será conectada ao monitoramento real do seu inversor.</p>
+
+    <div class="usina-stats">
+      <div class="usina-stat"><span>Potência instalada</span><b id="usina-kwp">—</b></div>
+      <div class="usina-stat"><span>Geração hoje</span><b id="usina-hoje">—</b></div>
+      <div class="usina-stat"><span>Geração no mês</span><b id="usina-mes">—</b></div>
+      <div class="usina-stat"><span>Economia no mês</span><b id="usina-economia">—</b></div>
+    </div>
+
+    <p class="result-label" style="color:var(--text-muted)">Geração dos últimos 7 dias</p>
+    <div class="usina-bars" id="usina-bars"></div>
+    <div class="usina-bars-labels" id="usina-bars-labels"></div>
+  </div>
+</div>
+
+<!-- MODAL: Política de Privacidade (compartilhado com Login.html) -->
+<div class="modal-overlay" id="privacy-modal">
+  <div class="modal-card">
+    <button class="modal-close" id="privacy-close" type="button" aria-label="Fechar">×</button>
+    <h3>Política de Privacidade</h3>
+    <div class="privacy-text">
+      <h4>Quais dados coletamos</h4>
+      <p>Ao criar uma conta ou usar o simulador de orçamento, podemos coletar seu nome, e-mail, telefone, endereço e, se você enviar, uma foto de perfil.</p>
+      <h4>Onde os dados ficam armazenados</h4>
+      <p>Neste site de demonstração, os dados são salvos apenas no armazenamento local do seu próprio navegador (localStorage/sessionStorage) — não são enviados a nenhum servidor da Sanon. Limpar os dados do navegador apaga essas informações.</p>
+      <h4>Como usamos seus dados</h4>
+      <p>Usamos as informações apenas para simular o orçamento, manter sua sessão de login e preencher a mensagem enviada ao nosso WhatsApp quando você solicita um orçamento.</p>
+      <h4>Seus direitos (LGPD)</h4>
+      <p>Você pode acessar, corrigir ou apagar seus dados a qualquer momento em "Meu perfil" ou limpando os dados do site no seu navegador. Em caso de dúvidas sobre privacidade, entre em contato pelo e-mail contato@sanon.com.br.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Botão flutuante do WhatsApp -->
+<a class="whatsapp-float" href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20Sanon!%20Quero%20saber%20mais%20sobre%20energia%20solar." target="_blank" rel="noopener" aria-label="Falar com a Sanon no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#ffffff"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C10.1 9 9.6 7.8 9.4 7.3c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5-1.3c1.4.8 3.1 1.2 4.9 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.7 0-3.2-.5-4.6-1.3l-.3-.2-3 .8.8-2.9-.2-.3C3.9 15 3.4 13.5 3.4 12c0-4.7 3.9-8.6 8.6-8.6 4.7 0 8.6 3.9 8.6 8.6 0 4.8-3.9 8.6-8.6 8.6z"/></svg>
+</a>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand" style="color:var(--sand-100)">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Sanon<small style="color:rgba(246,243,238,0.55)">GESTÃO &amp; ENERGIA</small></span>
+        </a>
+        <p style="margin-top:14px;max-width:34ch">Projeto, instalação e gestão de sistemas de energia fotovoltaica para residências e empresas.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#galeria">Projetos</a></li>
+          <li><a href="#orcamento">Orçamento</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="https://wa.me/5511999999999" target="_blank" rel="noopener">WhatsApp: (11) 99999-9999</a></li>
+          <li><a href="mailto:contato@sanon.com.br">contato@sanon.com.br</a></li>
+          <li>Franca, São Paulo — SP</li>
+          <li><button type="button" class="link-btn" data-open-privacy style="color:rgba(246,243,238,0.7)">Política de Privacidade</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Sanon Gestão e Energia. Todos os direitos reservados.</span>
+      <span>CNPJ 00.000.000/0001-00</span>
+    </div>
+  </div>
+</footer>
+
+<!-- JS: index.js (contém a autenticação simulada + a lógica da home) -->
+<script src="index.js"></script>
+</body>
+</html>
